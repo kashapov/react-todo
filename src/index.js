@@ -5,6 +5,8 @@ import AppHeader from "./components/AppHeader";
 import SearchPanel from "./components/SearchPanel";
 import TodoList from "./components/TodoList";
 
+import "./index.css";
+
 const App = () => {
   const todoData = [
     { id: 1, label: "Learn React", important: false },
@@ -13,7 +15,7 @@ const App = () => {
   ];
 
   return (
-    <div>
+    <div className="todo-app">
       <AppHeader />
       <SearchPanel />
       <TodoList todos={todoData} />
