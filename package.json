@@ -21,5 +21,17 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "-----",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kashapov/react-todo.git"
+  },
+  "author": "Andrey Kashapov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kashapov/react-todo/issues"
+  },
+  "homepage": "https://github.com/kashapov/react-todo#readme"
 }
