@@ -17,6 +17,7 @@ export default class App extends Component {
       this.createTodoItem("Learn Redux"),
       this.createTodoItem("Build Awesome App")
     ],
+    filter: "all",
     search: ""
   };
 
@@ -88,6 +89,7 @@ export default class App extends Component {
       search
     });
   };
+  
 
   search(items, search) {
     return items.filter(el => {
@@ -95,10 +97,28 @@ export default class App extends Component {
     });
   }
 
-  render() {
-    const { todoData, search } = this.state;
+  onFilter = filter => {
+    this.setState({
+      filter
+    });
+    //console.log(filter);
+  };
 
+  filter(items, filter) {
+  // switch filter 
+
+    /*return items.filter(el => {
+      return el.label.done === filter;
+    });*/
+  }
+
+  render() {
+    const { todoData, search, filter } = this.state;
+
+    //visibleTodo = this.filter(visibleTodo, filter);
     const visibleTodo = this.search(todoData, search);
+
+    
 
     const doneCount = visibleTodo.filter(el => el.done).length;
     const todoCount = visibleTodo.length - doneCount;
@@ -108,7 +128,7 @@ export default class App extends Component {
         <AppHeader toDo={todoCount} done={doneCount} />
         <div className="top-panel d-flex">
           <SearchPanel onSearch={this.onSearch} />
-          <ItemStatusFilter />
+          <ItemStatusFilter onFilter={this.onFilter} filter={filter} />
         </div>
         <TodoList
           todos={visibleTodo}
