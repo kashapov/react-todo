@@ -1,6 +1,6 @@
 # Todo Application on React.js
 -----
-![react-todo-app](react-todo-app.png | width=400)
+![react-todo-app](react-todo-app.png){:width="400px"}
 
 [Link to app](https://kashapov.github.io/react-todo)
 
